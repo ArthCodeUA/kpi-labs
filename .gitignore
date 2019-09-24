@@ -1,0 +1,9 @@
+*.iml
+*.ipr
+*.iws
+*.log
+.idea/**
+**/target/*
+**/logs
+libs
+/texture/
