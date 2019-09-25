@@ -5,7 +5,7 @@ public class Main {
         System.out.println(aprog(512, 5423, 7642));
     }
 
-    private static int aprog(int a, int d, int n) {
+    private static double aprog(double a, double d, double n) {
         return a + d * (n - 1);
     }
 }
