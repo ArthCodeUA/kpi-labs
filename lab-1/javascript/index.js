@@ -1,4 +1,4 @@
-// ES6 Version
+// ES6 Version [Lab #1 | Task #13]
 
 "use strict";
 
