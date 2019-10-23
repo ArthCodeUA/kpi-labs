@@ -9,6 +9,8 @@ const sequence = (x) => {
     return sum;
 };
 
+/* Checking X */
+
 let valid = false;
 while(!valid) {
     const x = parseFloat(prompt('Input X'));
