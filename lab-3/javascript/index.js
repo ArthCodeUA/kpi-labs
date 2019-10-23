@@ -1,4 +1,4 @@
-let sequence = (x) => {
+const sequence = (x) => {
     const E = 0.0001;
     let current = 1;
     let sum = current;
@@ -8,3 +8,10 @@ let sequence = (x) => {
     }
     return sum;
 };
+
+let valid = false;
+while(!valid) {
+    const x = parseFloat(prompt('Input X'));
+    valid = x >= 0 && x <=5;
+    alert(valid ? sequence(x) : "Wrong parameter. X should be a number and between 0 and 5 inclusively.");
+}
