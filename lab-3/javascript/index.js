@@ -1,5 +1,7 @@
 // ES6 Version [Lab #3 | Task #13]
 
+"use strict";
+
 // Sequence function.
 const sequence = (x) => {
     const E = 0.0001;
