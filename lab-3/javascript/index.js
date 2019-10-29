@@ -1,3 +1,6 @@
+// ES6 Version [Lab #3 | Task #13]
+
+// Sequence function.
 const sequence = (x) => {
     const E = 0.0001;
     let current = 1;
@@ -9,8 +12,7 @@ const sequence = (x) => {
     return sum;
 };
 
-/* Checking X */
-
+// Checking if X is a valid parameter.
 let valid = false;
 while(!valid) {
     const x = parseFloat(prompt('Input X'));
