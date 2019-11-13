@@ -1,3 +1,7 @@
+// ES6 Version [Lab #6 | Task #13]
+
+"use strict";
+
 // Function h(a,b) is a function, that is being used in function F.
 let h = (a, b) => {
     return (a / (1 + b ** 2) + (b / (1 + a ** 2)) - (a - b) ** 3);
