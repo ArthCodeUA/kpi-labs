@@ -12,3 +12,8 @@ let h = (a, b) => {
 let f = (s, t) => {
     return h(s, t) + Math.max(h(s - t, s * t) ** 2, h(s - t, s + t) ** 4) + 1;
 };
+
+
+const s = parseInt(prompt('Input P'));
+const t = parseInt(prompt('Input Q'));
+alert(f(s, t));
