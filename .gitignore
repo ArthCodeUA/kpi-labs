@@ -7,3 +7,4 @@
 **/logs
 libs
 /texture/
+.DS_Store
