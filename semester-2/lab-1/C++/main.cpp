@@ -1,20 +1,17 @@
 #include <iostream>
+#include "functions.h"
 
 using namespace std;
 
-bool equality(int a, int b) {
-    return !(a^b);
-}
-
-int increment(int a) {
-    return -~a;
-}
-
 int main() {
     // Testing Increment Function
-    cout << increment(-43) << endl;
-    cout << increment(75) << endl;
-    cout << increment(63) << endl;
+    int x = 0;
+    increment(-43, x);
+    cout << x << endl;
+    increment(75, x);
+    cout << x << endl;
+    increment(63, x);
+    cout << x << endl;
 
     cout << endl;
 
