@@ -4,6 +4,8 @@ namespace lab_1
 {
     internal static class Program
     {
+        // Lab #1, Variant #13
+        
         private static void Main(string[] args)
         {
             // Testing Increment Function
