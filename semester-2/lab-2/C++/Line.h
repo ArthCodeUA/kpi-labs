@@ -9,6 +9,7 @@ class Line {
 private:
     char* line;
 public:
+    Line() = default;
     explicit Line(char* Line);
     int getLength();
     char* getLine();

@@ -2,17 +2,19 @@
 #define LAB_2_TEXT_H
 
 #include "Line.h"
-#include <vector>
 
 using namespace std;
 
 class Text {
     private:
-        vector<Line> text;
+        Line* text;
+        int length;
     public:
+        Text();
+
         int getLength();
 
-        vector<Line> getText();
+        Line* getText();
 
         void addLine(Line new_line);
 

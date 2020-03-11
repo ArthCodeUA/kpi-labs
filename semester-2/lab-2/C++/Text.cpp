@@ -6,16 +6,34 @@
 using namespace std;
 
 void Text::addLine(Line new_line) {
-    text.push_back(new_line);
+    Line *new_text = new Line[getLength() + 1];
+    for (int i = 0; i < getLength(); ++i) {
+        new_text[i] = text[i];
+    }
+    new_text[getLength()] = new_line;
+    delete[] text;
+    text = new_text;
+    length += 1;
 }
 
 void Text::removeLine(int line_index) {
-    text.erase(text.begin() + line_index);
-
+    Line *new_text = new Line[getLength() - 1];
+    for (int i = 0; i < getLength(); i++) {
+        if (i == line_index) continue;
+        if (i < line_index) {
+            new_text[i] = text[i];
+        }
+        if (i > line_index) {
+            new_text[i - 1] = text[i];
+        }
+    }
+    delete[] text;
+    text = new_text;
+    length -= 1;
 }
 
 int Text::getLength() {
-    return text.size();
+    return length;
 }
 
 bool isVowel(char c) {
@@ -31,8 +49,7 @@ float Text::vowelsPercentage() {
             letters++;
             char current = text[i].getLine()[k];
             if (!isalpha(current)) continue;
-            if (isVowel(current))
-            {
+            if (isVowel(current)) {
                 vowels++;
             }
         }
@@ -50,17 +67,18 @@ float Text::avgLength() {
 }
 
 void Text::clearText() {
-    text.erase(text.begin(), text.end());
+    text = new Line[0];
+    length = 0;
 }
 
 void Text::removeRegexp(Line substring) {
     if (substring.getLength() > 0) {
         char key = substring.getLine()[0];
-        for (int i = getLength()-1; i >= 0; i--) {
+        for (int i = getLength() - 1; i >= 0; i--) {
             for (int j = 0; j < text[i].getLength(); j++) {
                 if (text[i].getLine()[j] == key && j + substring.getLength() <= text[i].getLength()) {
                     bool found = true;
-                    for (int k = j; k < j+substring.getLength(); k++) {
+                    for (int k = j; k < j + substring.getLength(); k++) {
                         if (text[i].getLine()[k] != substring.getLine()[k - j]) {
                             found = false;
                             break;
@@ -76,6 +94,11 @@ void Text::removeRegexp(Line substring) {
     }
 }
 
-vector<Line> Text::getText() {
+Line* Text::getText() {
     return text;
+}
+
+Text::Text() {
+    text = new Line[0];
+    length = 0;
 }

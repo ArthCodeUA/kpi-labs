@@ -68,38 +68,14 @@ namespace lab_2
             return Math.Round((vowels / letters) * 100, 2);
         }
 
-        public void RemoveRegexp(string regexp)
+        public void RemoveRegexp(string substr)
         {
-            if (regexp.Length > 0)
+            if (substr.Length <= 0) return;
+            for (int i = _content.Length-1; i >= 0; i--)
             {
-                char[] search = regexp.ToCharArray();
-                char key = search[0];
-                for (int i = _content.Length-1; i >= 0; i--)
-                {
-                    Console.WriteLine(i);
-                    char[] currentLine = _content[i].Str;
-                    for (int j = 0; j < currentLine.Length; j++)
-                    {
-                        char currentChar = currentLine[j];
-                        if (currentChar == key && j + search.Length <= currentLine.Length)
-                        {
-                            bool found = true;
-                            for (int k = j; k < j+search.Length; k++)
-                            {
-                                if (currentLine[k] != search[k - j])
-                                {
-                                    found = false;
-                                    break;
-                                }
-                            }
-                            if (found)
-                            {
-                                RemoveLine(i);
-                                break;
-                            }
-                        }
-                    }
-                }
+                if (!_content[i].Str.ToString().Contains(substr)) continue;
+                RemoveLine(i);
+                break;
             }
         }
     }

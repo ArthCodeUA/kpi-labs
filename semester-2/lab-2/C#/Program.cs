@@ -13,8 +13,6 @@ namespace lab_2
             arthcode.AddLine(new Line("in mattis sed, vehicula ut ex"));
             Console.WriteLine(arthcode.AvgLength());
             Console.WriteLine(arthcode.VowelsPercentage());
-            Console.WriteLine(arthcode.AvgLength());
-            Console.WriteLine(arthcode.VowelsPercentage());
             arthcode.RemoveRegexp("mat");
             PrintText(arthcode);
             Console.WriteLine();
