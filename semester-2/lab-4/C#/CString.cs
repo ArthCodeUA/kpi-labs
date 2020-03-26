@@ -6,7 +6,7 @@ namespace lab_4
 {
     public class CString
     {
-        private char[] Value { get; set; }
+        private char[] Value { get; private set; }
 
         public CString(int length)
         {
