@@ -9,8 +9,8 @@ char *CString::GetValue() {
     return this->Value;
 }
 
-CString::CString() {
-    this->Value = new char[0];
+CString::CString(int length) {
+    this->Value = new char[length];
 }
 
 CString::CString(char *value) {
@@ -22,9 +22,8 @@ CString::CString(const CString &cString) {
 }
 
 CString CString::operator+(CString &nw) {
-    CString newString;
     int newLength = this->GetLength() + nw.GetLength();
-    newString.Value = new char[newLength];
+    CString newString = CString(newLength);
     for (int i = 0; i < newLength; i++) {
         if (i < this->GetLength()) {
             newString.Value[i] = this->Value[i];
@@ -36,8 +35,7 @@ CString CString::operator+(CString &nw) {
 }
 
 CString CString::operator-(char c) {
-    CString newString;
-    newString.Value = new char[this->GetLength() - this->CountChar(c)];
+    CString newString = CString(this->GetLength() - this->CountChar(c));
     int step = 0;
     for (int i = 0; i < this->GetLength(); i++) {
         if (c == this->Value[i]) { continue; }

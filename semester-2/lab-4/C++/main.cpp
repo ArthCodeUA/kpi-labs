@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     char* initial = (char*) "cd#";
-    CString s1 = CString();
+    CString s1 = CString(0);
     CString s2 = CString(initial);
     CString s3 = CString(s2);
     cout << s1.GetValue() << endl;

@@ -8,9 +8,9 @@ namespace lab_4
     {
         private char[] Value { get; set; }
 
-        public CString()
+        public CString(int length)
         {
-            Value = new char[0];
+            Value = new char[length];
         }
         
         public CString(CString cString)
@@ -36,8 +36,7 @@ namespace lab_4
         public static CString operator +(CString one, CString two)
         {
             int newLength = one.GetLength() + two.GetLength();
-            CString newString = new CString();
-            newString.Value = new char[newLength];
+            CString newString = new CString(newLength);
             for (int i = 0; i < newLength; i++)
             {
                 if (i < one.GetLength())
@@ -55,8 +54,7 @@ namespace lab_4
         
         public static CString operator -(CString one, char c)
         {
-            var newString = new CString();
-            newString.Value = new char[one.GetLength() - one.GetValue().Count(q => q == c)];
+            CString newString = new CString(one.GetLength() - one.GetValue().Count(q => q == c));
             int step = 0;
             if (one.GetValue().Contains(c))
             {

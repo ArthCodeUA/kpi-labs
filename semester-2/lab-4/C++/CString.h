@@ -12,7 +12,7 @@ public:
 
     char * GetValue();
 
-    CString();
+    CString(int length);
 
     explicit CString(char *);
 
